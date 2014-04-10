@@ -1,5 +1,5 @@
 from flask import Flask, url_for, request,Response, send_file, redirect
-import ipsum
+import ipsum.generator as ipsum_generator
 import placeholder_graphic.generator as image_generator
 import json
 import os
@@ -38,7 +38,7 @@ def generate_ipsum():
         enochian_weight = int(request.args['enochian_weight'])
 
     try:
-        return_data['text'] = ipsum.generator.generate(p,s_variance,include_enochian,enochian_weight)
+        return_data['text'] = ipsum_generator.generate(p,s_variance,include_enochian,enochian_weight)
         return_data['success'] = 'true'
         return_data['status'] = 200
     except Exception as e:
