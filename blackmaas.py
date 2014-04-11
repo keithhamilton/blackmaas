@@ -27,7 +27,6 @@ def ipsum():
     return app.send_static_file('generate.html')
 
 @app.route('/ipsum/generate', methods=['GET'])
-@crossdomain(origin='*')
 def generate_ipsum():
     # defaults
     p=4
@@ -80,7 +79,7 @@ def generate_image():
         return "{'success':'error'}"    
 
 if __name__ == '__main__':
-    app.debug = False 
+    app.debug = False
     if app.debug:
         app.run()
     else:
