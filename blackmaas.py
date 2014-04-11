@@ -9,12 +9,20 @@ app = Flask(__name__,static_url_path='/static')
 @app.route('/')
 def default():
     return redirect(url_for('ipsum'))
+    
+@app.route('/about')
+def about():
+    return app.send_static_file('about.html')
 
-@app.route('/ipsum/<path:static_type>/<path:path>')
+@app.route('/image')
+def images():
+    return app.send_static_file('images.html')
+    
+@app.route('/<path:static_type>/<path:path>')
 def serve_js(static_type,path):
     return app.send_static_file(os.path.join(static_type, path))
 
-@app.route('/ipsum/create')
+@app.route('/ipsum')
 def ipsum():
     return app.send_static_file('generate.html')
 
