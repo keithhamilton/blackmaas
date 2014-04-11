@@ -55,6 +55,10 @@ def default():
 def about():
     return app.send_static_file('about.html')
 
+@app.route('/blackmaas-js')
+def blackmaas_js():
+    return app.send_static_file('blackmaas-js.html')
+
 @app.route('/image')
 def images():
     return app.send_static_file('images.html')
