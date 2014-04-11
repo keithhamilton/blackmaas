@@ -125,7 +125,7 @@ def generate_image():
         return "{'success':'error'}"    
 
 if __name__ == '__main__':
-    app.debug = False
+    app.debug = True
     if app.debug:
         app.run()
     else:
