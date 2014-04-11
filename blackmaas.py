@@ -27,6 +27,7 @@ def ipsum():
     return app.send_static_file('generate.html')
 
 @app.route('/ipsum/generate', methods=['GET'])
+@crossdomain(origin='*')
 def generate_ipsum():
     # defaults
     p=4
