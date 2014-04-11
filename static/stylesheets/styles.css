@@ -323,10 +323,10 @@ footer {
 }
 
 #generated-text{
-  width:50%;
+  width:100%;
   height:auto;
-  margin-left:25%;
-  margin-top:20px;
+  margin-bottom:20px;
+  margin-top:10px;
   color:#FFF;
 }
 
